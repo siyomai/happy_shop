@@ -2,6 +2,10 @@
 ----
   Here is the available APIs for Happy Shop's products.
 
+* **Base URL**
+
+  `https://agt-happy-shop.herokuapp.com`
+
 * **URL**
 
   `/api/products?per_page=5&page=2&filter[category]=lipstick&sort=price`

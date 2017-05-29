@@ -1,24 +1,80 @@
-# README
+**Happy Shop Products API**
+----
+  Here is the available APIs for Happy Shop's products.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* **URL**
 
-Things you may want to cover:
+  `/api/products?per_page=5&page=2&filter[category]=lipstick&sort=price`
 
-* Ruby version
+* **Method:**
 
-* System dependencies
+  `GET`
+  
+*  **URL Params**
 
-* Configuration
+   **Optional:**
+ 
+   - `per_page=[integer]`
+   - `page=[integer]`
+   - `filter[category | price]=[string]`
+   - `sort=[string]`
 
-* Database creation
+* **Success Response:**
+ 
+  * **Code:** 200 <br />
+    **Content:**
+    ```
+      {
+        "data": [
+          {
+            "id": "1",
+            "type": "products",
+            "attributes": {
+              "name": "Maybelline lipstick",
+              "sold-out": false,
+              "category": "lipstick",
+              "under-sale": false,
+              "price": 1000,
+              "sale-price": 0
+            }
+          }
+        ],
+        "links": {}
+      }
+    ```
+   
+* **URL**
 
-* Database initialization
+  `/api/products/:id`
 
-* How to run the test suite
+* **Method:**
 
-* Services (job queues, cache servers, search engines, etc.)
+  `GET`
+  
+*  **URL Params**
 
-* Deployment instructions
+   **Required:**
+ 
+   `id=[id]`
 
-* ...
+* **Success Response:**
+ 
+  * **Code:** 200 <br />
+    **Content:**
+    ```
+      {
+        "data": {
+          "id": "1",
+          "type": "products",
+          "attributes": {
+            "name": "Maybelline lipstick",
+            "sold-out": false,
+            "category": "lipstick",
+            "under-sale": false,
+            "price": 1000,
+            "sale-price": 0
+          }
+        }
+      }
+    ```
+ 

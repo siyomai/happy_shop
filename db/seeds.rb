@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Product.create({name: "Maybelline lipstick", sold_out: false, category: "lipstick", under_sale: false, price: 1000, sale_price: 0})
+Product.create({name: "Revlon haircolor", sold_out: false, category: "haircolor", under_sale: false, price: 5000, sale_price: 0})
+Product.create({name: "Avon mascarra", sold_out: false, category: "mascarra", under_sale: false, price: 10000, sale_price: 0})

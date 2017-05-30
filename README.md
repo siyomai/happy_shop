@@ -81,4 +81,21 @@
         }
       }
     ```
+    
+ * **Error Response:**
+
+   * **Code:** 404 Not Found <br />
+     **Content:**
+      ```
+      {
+        "errors" => [
+          {
+            "source" => {
+              "pointer" => "/data/attributes/id"
+            },
+            "detail" => "Wrong ID provided"
+          }
+        ]
+      }
+      ```
  

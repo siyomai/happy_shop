@@ -1,8 +1,7 @@
 class Api::ProductsController < ApplicationController
   def index
-    ActionController::Parameters.permit_all_parameters = true
-    sort = params[:sort] == "price" ? params[:sort] : nil
-    filter = filter_for(params[:filter].to_hash) if params[:filter]
+    sort = permitted_params[:sort] == "price" ? permitted_params[:sort] : nil
+    filter = filter_for(permitted_params[:filter].to_hash) if permitted_params[:filter]
     products = Product.order(sort).where(filter)
 
     paginate json: products
@@ -21,6 +20,10 @@ class Api::ProductsController < ApplicationController
   end
 
   private
+
+  def permitted_params
+    params.permit(:filter, :sort)
+  end
 
   def filter_for(filter)
     if ["category", "price"].include? filter.keys[0]
